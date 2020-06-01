@@ -56,7 +56,7 @@ internal class ActivityTest {
         scenario.moveToState(Lifecycle.State.STARTED)
         scenario.onActivity { activity -> assertTrue(assertNotNull(activity.job).isActive) }
 
-        scenario.onActivity { activity -> assertEquals(4, activity.callCounter.get()) }
+        scenario.onActivity { activity -> assertEquals(3, activity.callCounter.get()) }
     }
 
     @Test
