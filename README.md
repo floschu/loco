@@ -11,7 +11,6 @@
     <a href="https://github.com/floschu/loco/actions"><img alt="build" src="https://github.com/floschu/loco/workflows/build/badge.svg" /></a>
 </p>
 
-
 ## installation
 
 ``` groovy
