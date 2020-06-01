@@ -117,3 +117,9 @@ class CustomView @JvmOverloads constructor(
 ## author
 
 visit my [website](https://florianschuster.at/).
+
+<p align="center">
+    <b>support me via</b></br>
+    bitcoin:3Gsf3anZLiG1gSoH7BLi9AUGtp6JgAmS93</br>
+    <img alt="flow" width="180" src=".media/btc.png">
+</p>
