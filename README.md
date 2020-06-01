@@ -1,5 +1,5 @@
 <p align="center">
-    <b>🚀 loco - launch on cancel on 🚀</b></br></b></br>
+    <b>loco - launch on 🚀 cancel on 💥</b></br></b></br>
 </p>
 
 <p align=center>
