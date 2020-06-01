@@ -34,8 +34,8 @@ android {
 dependencies {
     implementation(Libs.appcompat)
     implementation(Libs.fragment_ktx)
-    implementation(Libs.kotlin_stdlib)
-    implementation(Libs.kotlinx_coroutines_core)
+    // implementation(Libs.kotlin_stdlib)
+    // implementation(Libs.kotlinx_coroutines_core)
     implementation(Libs.lifecycle_runtime_ktx)
 
     debugImplementation(Libs.fragment_testing)
@@ -49,5 +49,4 @@ dependencies {
     androidTestImplementation(Libs.junit_ktx)
 }
 
-// todo jacoco
-// apply(from = "$rootDir/gradle/deploy.gradle") todo
+apply(from = "$rootDir/gradle/deploy.gradle")
