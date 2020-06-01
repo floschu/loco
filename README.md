@@ -29,10 +29,92 @@ dependencies {
 
 extensions to **l**aunch **o**n a specific lifecycle event & **c**ancel **o**n a specific lifecycle event
 
-- [lifecycle extensions](loco-core/src/main/kotlin/at/florianschuster/loco/lifecycle.kt)
-- [activity extensions](loco-core/src/main/kotlin/at/florianschuster/loco/activity.kt)
-- [fragment extensions](loco-core/src/main/kotlin/at/florianschuster/loco/fragment.kt)
-- [view extensions](loco-core/src/main/kotlin/at/florianschuster/loco/view.kt)
+### [lifecycle extensions](loco-core/src/main/kotlin/at/florianschuster/loco/lifecycle.kt)
+
+example:
+
+```kotlin
+val lifecycle: Lifecycle
+lifecycle.launchOnCreateCancelOnDestroy {
+    /**
+     * these will be launched once the lifecycle is created and cancelled once the 
+     * lifecycle is destroyed. it is also relaunched on each create.
+     */
+    someFlow().launchIn(this)
+    launch { someSuspendingFunction() }
+}
+```
+
+### [activity extensions](loco-core/src/main/kotlin/at/florianschuster/loco/activity.kt)
+
+example:
+
+```kotlin
+class MainActivity : Activity(R.layout.activity_main) {
+ 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+ 
+        launchOnLifecycleCreateCancelOnLifecycleDestroy {
+            /**
+             * this will be launched once the Activity is created and cancelled once the 
+             * activity is destroyed. it is also relaunched on each create.
+             */
+            button.clicks().onEach {
+                // do something
+            }.launchIn(this)
+        }
+    }
+}
+```
+
+### [fragment extensions](loco-core/src/main/kotlin/at/florianschuster/loco/fragment.kt)
+
+example:
+
+```kotlin
+class SomeFragment : Frgment(R.layout.fragment_some) {
+ 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+ 
+        launchOnViewLifecycleStartCancelOnViewLifecycleStop {
+            /**
+             * this will be launched once the fragment view lifecycle is started and cancelled  
+             * once the fragment view lifecycle is stopped. it is also relaunched on each start.
+             */
+            button.clicks().onEach {
+                // do something
+            }.launchIn(this)
+        }
+    }
+}
+```
+
+### [view extensions](loco-core/src/main/kotlin/at/florianschuster/loco/view.kt)
+
+example:
+
+```kotlin
+class CustomView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr) {
+ 
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        launchOnLifecycleResumeCancelOnLifecyclePause {
+            /**
+             * this will be launched once the view tree lifecycle is resumed and cancelled  
+             * once the view tree lifecycle is paused. it is also relaunched on each resume.
+             */
+            emptyFlow().launchIn(this)
+              launch { suspendingFunction() }
+        }
+    }
+}
+```
 
 ## author
 
