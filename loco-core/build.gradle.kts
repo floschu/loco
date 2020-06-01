@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("jacoco")
 }
 
 android {
@@ -27,6 +28,7 @@ android {
     sourceSets["main"].java.srcDir("src/main/kotlin")
     sourceSets["test"].java.srcDir("src/test/kotlin")
     sourceSets["androidTest"].java.srcDir("src/androidTest/kotlin")
+    buildFeatures.buildConfig = false
 }
 
 dependencies {
@@ -44,6 +46,6 @@ dependencies {
     androidTestImplementation(Libs.espresso_core)
     androidTestImplementation(Libs.junit_ktx)
 }
+
 // todo jacoco
-// todo run androidTest on githubactions
 // apply(from = "$rootDir/gradle/deploy.gradle") todo

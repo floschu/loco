@@ -32,6 +32,8 @@ object Versions {
 
     const val espresso_core: String = "3.2.0"
 
+    const val binary_compatibility_validator: String = "0.2.3"
+
     const val lint_gradle: String = "27.0.0"
 
     const val appcompat: String = "1.1.0"

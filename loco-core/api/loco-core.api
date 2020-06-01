@@ -1,0 +1,36 @@
+public final class at/florianschuster/loco/ActivityKt {
+	public static final fun launchOnLifecycleCreateCancelOnLifecycleDestroy (Landroidx/activity/ComponentActivity;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnLifecycleCreateCancelOnLifecycleDestroy$default (Landroidx/activity/ComponentActivity;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnLifecycleResumeCancelOnLifecyclePause (Landroidx/activity/ComponentActivity;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnLifecycleResumeCancelOnLifecyclePause$default (Landroidx/activity/ComponentActivity;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnLifecycleStartCancelOnLifecycleStop (Landroidx/activity/ComponentActivity;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnLifecycleStartCancelOnLifecycleStop$default (Landroidx/activity/ComponentActivity;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+}
+
+public final class at/florianschuster/loco/FragmentKt {
+	public static final fun launchOnViewLifecycleCreateCancelOnViewLifecycleDestroy (Landroidx/fragment/app/Fragment;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnViewLifecycleCreateCancelOnViewLifecycleDestroy$default (Landroidx/fragment/app/Fragment;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnViewLifecycleResumeCancelOnViewLifecyclePause (Landroidx/fragment/app/Fragment;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnViewLifecycleResumeCancelOnViewLifecyclePause$default (Landroidx/fragment/app/Fragment;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnViewLifecycleStartCancelOnViewLifecycleStop (Landroidx/fragment/app/Fragment;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnViewLifecycleStartCancelOnViewLifecycleStop$default (Landroidx/fragment/app/Fragment;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+}
+
+public final class at/florianschuster/loco/LifecycleKt {
+	public static final fun launchOnCreateCancelOnDestroy (Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnCreateCancelOnDestroy$default (Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnResumeCancelOnPause (Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnResumeCancelOnPause$default (Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnStartCancelOnStop (Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnStartCancelOnStop$default (Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+}
+
+public final class at/florianschuster/loco/ViewKt {
+	public static final fun launchOnLifecycleCreateCancelOnLifecycleDestroy (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnLifecycleCreateCancelOnLifecycleDestroy$default (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnLifecycleResumeCancelOnLifecyclePause (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnLifecycleResumeCancelOnLifecyclePause$default (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnLifecycleStartCancelOnLifecycleStop (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnLifecycleStartCancelOnLifecycleStop$default (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+}
+

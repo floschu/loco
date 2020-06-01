@@ -86,6 +86,14 @@ object Libs {
             "at.florianschuster.test:coroutines-test-extensions:" +
             Versions.coroutines_test_extensions
 
+
+    /**
+     * https://github.com/Kotlin/binary-compatibility-validator
+     */
+    const val binary_compatibility_validator: String =
+        "org.jetbrains.kotlinx:binary-compatibility-validator:" +
+            Versions.binary_compatibility_validator
+
     /**
      * https://developer.android.com/testing
      */

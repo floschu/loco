@@ -13,10 +13,20 @@ jobs:
         with:
           java-version: 1.8
       - name: "ktlint"
-        run: ./gradlew ktlintCheck
+        run: ./gradlew lint ktlintCheck
 
-  test:
-    needs: lint
+  android_test:
+    runs-on: macos-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+      - name: "Run Instrumentation tests"
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+
+  api_validation:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
@@ -25,11 +35,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: "Test"
-        run: ./gradlew test
+      - name: "Validates the Api"
+        run: ./gradlew apiCheck
 
   assemble:
-    needs: lint
+    needs: [lint, android_test, api_validation]
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
