@@ -1,4 +1,6 @@
-# loco - launch on cancel on
+<p align="center">
+    <b>🚀 loco - launch on cancel on 🚀</b></br></b></br>
+</p>
 
 <p align=center>
     <a href="https://bintray.com/flosch/loco/loco-core"><img alt="version" src="https://img.shields.io/bintray/v/flosch/loco/loco-core?label=core-version&logoColor=f88909" /></a> 
