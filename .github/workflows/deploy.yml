@@ -18,8 +18,19 @@ jobs:
       - name: "Checks all the things"
         run: ./gradlew lint ktlintCheck apiCheck assemble
 
+  android_test:
+    runs-on: macos-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+      - name: "Run Instrumentation tests"
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+
   publish:
-    needs: [all_checks]
+    needs: [all_checks, android_test]
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"

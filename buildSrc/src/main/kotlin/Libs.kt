@@ -8,22 +8,21 @@ import kotlin.String
  */
 object Libs {
     /**
-     * https://kotlinlang.org/
+     * https://github.com/Kotlin/kotlinx.coroutines
      */
-    const val kotlin_android_extensions: String =
-            "org.jetbrains.kotlin:kotlin-android-extensions:" + Versions.org_jetbrains_kotlin
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_android_extensions_runtime: String =
-            "org.jetbrains.kotlin:kotlin-android-extensions-runtime:" +
-            Versions.org_jetbrains_kotlin
+    const val kotlinx_coroutines_core: String = "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
+            Versions.org_jetbrains_kotlinx_kotlinx_coroutines
 
     /**
      * https://kotlinlang.org/
      */
     const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:" +
+            Versions.org_jetbrains_kotlin
+
+    /**
+     * https://kotlinlang.org/
+     */
+    const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:" +
             Versions.org_jetbrains_kotlin
 
     /**
@@ -80,19 +79,18 @@ object Libs {
             Versions.com_jfrog_bintray_gradle_plugin
 
     /**
+     * https://github.com/Kotlin/binary-compatibility-validator
+     */
+    const val binary_compatibility_validator: String =
+            "org.jetbrains.kotlinx:binary-compatibility-validator:" +
+            Versions.binary_compatibility_validator
+
+    /**
      * https://github.com/floschu/coroutines-test-extensions
      */
     const val coroutines_test_extensions: String =
             "at.florianschuster.test:coroutines-test-extensions:" +
             Versions.coroutines_test_extensions
-
-
-    /**
-     * https://github.com/Kotlin/binary-compatibility-validator
-     */
-    const val binary_compatibility_validator: String =
-        "org.jetbrains.kotlinx:binary-compatibility-validator:" +
-            Versions.binary_compatibility_validator
 
     /**
      * https://developer.android.com/testing

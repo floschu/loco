@@ -33,8 +33,10 @@ android {
 
 dependencies {
     implementation(Libs.appcompat)
-    implementation(Libs.lifecycle_runtime_ktx)
     implementation(Libs.fragment_ktx)
+    implementation(Libs.kotlin_stdlib)
+    implementation(Libs.kotlinx_coroutines_core)
+    implementation(Libs.lifecycle_runtime_ktx)
 
     debugImplementation(Libs.fragment_testing)
 

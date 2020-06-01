@@ -8,7 +8,6 @@
 <p align=center>
     <a href="https://github.com/floschu/loco/"><img alt="last commit" src="https://img.shields.io/github/last-commit/floschu/control?logoColor=ffffff" /></a>
     <a href="https://www.codacy.com/manual/floschu/loco?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=floschu/loco&amp;utm_campaign=Badge_Grade"><img alt="code quality" src="https://api.codacy.com/project/badge/Grade/39072347acb94bf79651d7f16bfa63ca" /></a>
-    <a href="https://codecov.io/gh/floschu/loco"><img alt="coverage" src="https://codecov.io/gh/floschu/loco/branch/develop/graph/badge.svg" /></a>
     <a href="https://github.com/floschu/loco/actions"><img alt="build" src="https://github.com/floschu/loco/workflows/build/badge.svg" /></a>
 </p>
 

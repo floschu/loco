@@ -12,6 +12,8 @@ import org.gradle.plugin.use.PluginDependencySpec
  * YOU are responsible for updating manually the dependency version.
  */
 object Versions {
+    const val org_jetbrains_kotlinx_kotlinx_coroutines: String = "1.3.7"
+
     const val org_jetbrains_kotlin: String = "1.3.72"
 
     const val androidx_lifecycle: String = "2.3.0-alpha03"
@@ -28,11 +30,11 @@ object Versions {
 
     const val com_jfrog_bintray_gradle_plugin: String = "1.8.5"
 
+    const val binary_compatibility_validator: String = "0.2.3"
+
     const val coroutines_test_extensions: String = "0.1.2"
 
     const val espresso_core: String = "3.2.0"
-
-    const val binary_compatibility_validator: String = "0.2.3"
 
     const val lint_gradle: String = "27.0.0"
 
