@@ -109,8 +109,8 @@ class CustomView @JvmOverloads constructor(
              * this will be launched once the view tree lifecycle is resumed and cancelled  
              * once the view tree lifecycle is paused. it is also relaunched on each resume.
              */
-            emptyFlow().launchIn(this)
-              launch { suspendingFunction() }
+            someFlow().launchIn(this)
+            launch { suspendingFunction() }
         }
     }
 }
