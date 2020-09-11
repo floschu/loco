@@ -27,7 +27,7 @@ internal inline fun <reified A : Activity> launchActivityWith(testType: TestType
     val intent = Intent(ApplicationProvider.getApplicationContext(), A::class.java).apply {
         putExtra(TestTypeKey, testType.name)
     }
-    return launchActivity(intent)
+    return ActivityScenario.launch(intent)
 }
 
 internal fun Activity.requireTestTypeInIntent(): TestType {

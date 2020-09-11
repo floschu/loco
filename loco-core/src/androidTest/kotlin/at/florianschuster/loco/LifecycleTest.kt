@@ -44,15 +44,6 @@ internal class LifecycleTest {
         assertFalse(assertNotNull(job).isActive)
         assertTrue(assertNotNull(job).isCancelled)
 
-        lifecycleOwner.currentState = Lifecycle.State.CREATED
-        assertTrue(assertNotNull(job).isActive)
-        assertFalse(assertNotNull(job).isCancelled)
-        assertEquals(2, scopes.count())
-
-        lifecycleOwner.currentState = Lifecycle.State.DESTROYED
-        assertFalse(assertNotNull(job).isActive)
-        assertTrue(assertNotNull(job).isCancelled)
-
         assertTrue(
             scopes.groupBy { it.hashCode() }.none { it.value.count() > 1 } // no duplicate scopes
         )

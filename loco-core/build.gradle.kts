@@ -29,24 +29,28 @@ android {
     sourceSets["test"].java.srcDir("src/test/kotlin")
     sourceSets["androidTest"].java.srcDir("src/androidTest/kotlin")
     buildFeatures.buildConfig = false
+    packagingOptions {
+        exclude("META-INF/AL2.0")
+        exclude("META-INF/LGPL2.1")
+    }
 }
 
 dependencies {
     implementation(Libs.appcompat)
-    implementation(Libs.fragment_ktx)
-    // implementation(Libs.kotlin_stdlib)
-    // implementation(Libs.kotlinx_coroutines_core)
     implementation(Libs.lifecycle_runtime_ktx)
 
-    debugImplementation(Libs.fragment_testing)
+    debugImplementation(Libs.fragment_testing) {
+        exclude("androidx.test", "monitor")
+    }
 
-    androidTestImplementation(Libs.lifecycle_runtime_testing)
     androidTestImplementation(Libs.androidx_test_rules)
     androidTestImplementation(Libs.androidx_test_runner)
     androidTestImplementation(Libs.core_ktx)
     androidTestImplementation(Libs.coroutines_test_extensions)
     androidTestImplementation(Libs.espresso_core)
     androidTestImplementation(Libs.junit_ktx)
+    androidTestImplementation(Libs.kotlinx_coroutines_debug)
+    androidTestImplementation(Libs.lifecycle_runtime_testing)
 }
 
 apply(from = "$rootDir/gradle/deploy.gradle")

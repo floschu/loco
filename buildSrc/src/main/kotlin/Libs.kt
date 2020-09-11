@@ -10,20 +10,8 @@ object Libs {
     /**
      * https://github.com/Kotlin/kotlinx.coroutines
      */
-    const val kotlinx_coroutines_core: String = "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
+    const val kotlinx_coroutines_debug: String = "org.jetbrains.kotlinx:kotlinx-coroutines-debug:" +
             Versions.org_jetbrains_kotlinx_kotlinx_coroutines
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:" +
-            Versions.org_jetbrains_kotlin
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:" +
-            Versions.org_jetbrains_kotlin
 
     /**
      * https://developer.android.com/jetpack/androidx
@@ -33,17 +21,6 @@ object Libs {
 
     const val lifecycle_runtime_testing: String = "androidx.lifecycle:lifecycle-runtime-testing:" +
             Versions.androidx_lifecycle
-
-    /**
-     * https://developer.android.com/jetpack/androidx
-     */
-    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:" + Versions.androidx_fragment
-
-    /**
-     * https://developer.android.com/jetpack/androidx
-     */
-    const val fragment_testing: String = "androidx.fragment:fragment-testing:" +
-            Versions.androidx_fragment
 
     /**
      * https://developer.android.com/testing
@@ -91,6 +68,18 @@ object Libs {
     const val coroutines_test_extensions: String =
             "at.florianschuster.test:coroutines-test-extensions:" +
             Versions.coroutines_test_extensions
+
+    /**
+     * https://kotlinlang.org/
+     */
+    const val kotlin_gradle_plugin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:" +
+            Versions.kotlin_gradle_plugin
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val fragment_testing: String = "androidx.fragment:fragment-testing:" +
+            Versions.fragment_testing
 
     /**
      * https://developer.android.com/testing

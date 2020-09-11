@@ -93,7 +93,30 @@ class SomeFragment : Frgment(R.layout.fragment_some) {
 
 ### [view extensions](loco-core/src/main/kotlin/at/florianschuster/loco/view.kt)
 
-example:
+example view attach/detach:
+
+```kotlin
+class CustomView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr) {
+ 
+    init {
+        launchOnViewAttachCancelOnViewDetach {
+            /**
+             * this will be launched once the view is attached to a window and cancelled
+             * once the view is detached from the window. it is also relaunched in each
+             * attach to window.
+             */
+            someFlow().launchIn(this)
+            launch { suspendingFunction() }
+        }
+    }
+}
+```
+
+example view-tree-lifecycle:
 
 ```kotlin
 class CustomView @JvmOverloads constructor(

@@ -10,6 +10,37 @@ import kotlinx.coroutines.SupervisorJob
 import kotlin.coroutines.CoroutineContext
 
 /**
+ * Launches [block] every time the [View] is attached to a window. The coroutines launched
+ * in [block] are cancelled when the [View] is detached from the window.
+ *
+ *
+ * Example:
+ *
+ * ```
+ * class CustomView @JvmOverloads constructor(
+ *     context: Context,
+ *     attrs: AttributeSet? = null,
+ *     defStyleAttr: Int = 0
+ * ) : FrameLayout(context, attrs, defStyleAttr) {
+ *
+ *     init {
+ *         launchOnViewAttachCancelOnViewDetach {
+ *             emptyFlow().launchIn(this)
+ *             launch { suspendingFunction() }
+ *         }
+ *     }
+ * }
+ * ```
+ */
+fun View.launchOnViewAttachCancelOnViewDetach(
+    coroutineContext: CoroutineContext = SupervisorJob() + Dispatchers.Main.immediate,
+    block: suspend CoroutineScope.() -> Unit
+) {
+    val listener = LaunchOnCancelOnViewAttachStateListener(coroutineContext, block)
+    addOnAttachStateChangeListener(listener)
+}
+
+/**
  * Retrieves the [LifecycleOwner] of this [View] via [View.findViewTreeLifecycleOwner] and
  * launches [block] every time the [LifecycleOwner.getLifecycle] state reaches
  * [Lifecycle.Event.ON_CREATE]. The coroutines launched in [block] are cancelled when

@@ -1,13 +1,9 @@
 package at.florianschuster.loco
 
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleEventObserver
-import androidx.lifecycle.LifecycleOwner
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 /**
@@ -19,7 +15,7 @@ fun Lifecycle.launchOnCreateCancelOnDestroy(
     coroutineContext: CoroutineContext = SupervisorJob() + Dispatchers.Main.immediate,
     block: suspend CoroutineScope.() -> Unit
 ) {
-    val observer = LaunchOnCancelOnObserver(
+    val observer = LaunchOnCancelOnLifecycleEventObserver(
         launchEvent = Lifecycle.Event.ON_CREATE,
         cancelEvent = Lifecycle.Event.ON_DESTROY,
         coroutineContext = coroutineContext,
@@ -37,7 +33,7 @@ fun Lifecycle.launchOnStartCancelOnStop(
     coroutineContext: CoroutineContext = SupervisorJob() + Dispatchers.Main.immediate,
     block: suspend CoroutineScope.() -> Unit
 ) {
-    val observer = LaunchOnCancelOnObserver(
+    val observer = LaunchOnCancelOnLifecycleEventObserver(
         launchEvent = Lifecycle.Event.ON_START,
         cancelEvent = Lifecycle.Event.ON_STOP,
         coroutineContext = coroutineContext,
@@ -55,31 +51,11 @@ fun Lifecycle.launchOnResumeCancelOnPause(
     coroutineContext: CoroutineContext = SupervisorJob() + Dispatchers.Main.immediate,
     block: suspend CoroutineScope.() -> Unit
 ) {
-    val observer = LaunchOnCancelOnObserver(
+    val observer = LaunchOnCancelOnLifecycleEventObserver(
         launchEvent = Lifecycle.Event.ON_RESUME,
         cancelEvent = Lifecycle.Event.ON_PAUSE,
         coroutineContext = coroutineContext,
         block = block
     )
     addObserver(observer)
-}
-
-private class LaunchOnCancelOnObserver(
-    private val launchEvent: Lifecycle.Event,
-    private val cancelEvent: Lifecycle.Event,
-    coroutineContext: CoroutineContext,
-    private val block: suspend CoroutineScope.() -> Unit
-) : LifecycleEventObserver {
-
-    private val scope = CoroutineScope(coroutineContext)
-    private var job: Job? = null
-
-    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
-        if (event == cancelEvent) {
-            job?.cancel()
-            job = null
-        } else if (event == launchEvent) {
-            job = scope.launch(block = block)
-        }
-    }
 }
