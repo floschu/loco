@@ -32,5 +32,7 @@ public final class at/florianschuster/loco/ViewKt {
 	public static synthetic fun launchOnLifecycleResumeCancelOnLifecyclePause$default (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 	public static final fun launchOnLifecycleStartCancelOnLifecycleStop (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
 	public static synthetic fun launchOnLifecycleStartCancelOnLifecycleStop$default (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static final fun launchOnViewAttachCancelOnViewDetach (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun launchOnViewAttachCancelOnViewDetach$default (Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 }
 
