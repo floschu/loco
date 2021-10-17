@@ -2,6 +2,14 @@
     <b>loco - launch on 🚀 cancel on 💥</b></br></b></br>
 </p>
 
+# Deprecated
+You can now use the native [Lifecycle.repeatOnLifecycle](https://developer.android.com/reference/kotlin/androidx/lifecycle/package-summary?hl=id#repeatonlifecycle)
+
+-------
+-------
+-------
+-------
+
 <p align=center>
     <a href="https://bintray.com/flosch/loco/loco-core"><img alt="version" src="https://img.shields.io/bintray/v/flosch/loco/loco-core?label=core-version&logoColor=f88909" /></a> 
     <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?color=7b6fe2" /></a>
